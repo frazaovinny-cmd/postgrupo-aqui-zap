@@ -1,0 +1,13 @@
+{
+  "name": "PostGrupo Aqui Zap",
+  "short_name": "PGZ",
+  "description": "Diretório de links de grupos de WhatsApp por cidade e categoria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#161313",
+  "theme_color": "#53e515",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

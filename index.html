@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#161313" />
+
+    <title>PostGrupo Aqui Zap — Links de grupos de WhatsApp da sua cidade</title>
+    <meta
+      name="description"
+      content="Encontre links de grupos de WhatsApp de vendas, ofertas e oportunidades por cidade e estado. Postgrupe seu grupo e alcance milhares de pessoas."
+    />
+    <meta
+      name="keywords"
+      content="grupo de whatsapp, link de grupo, grupos de vendas, ofertas, compras e vendas, grupos por cidade, whatsapp"
+    />
+    <meta name="author" content="PostGrupo Aqui Zap" />
+    <link rel="canonical" href="https://postgrupoaquizap.com.br/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="PostGrupo Aqui Zap" />
+    <meta property="og:title" content="PostGrupo Aqui Zap — Links de grupos de WhatsApp por cidade" />
+    <meta
+      property="og:description"
+      content="Diretório de grupos de WhatsApp de vendas e oportunidades, organizados por estado e cidade."
+    />
+    <meta property="og:url" content="https://postgrupoaquizap.com.br/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PostGrupo Aqui Zap" />
+    <meta
+      name="twitter:description"
+      content="Diretório de grupos de WhatsApp de vendas e oportunidades, organizados por estado e cidade."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PostGrupo Aqui Zap",
+        "url": "https://postgrupoaquizap.com.br/",
+        "inLanguage": "pt-BR",
+        "description": "Diretório de links de grupos de WhatsApp organizados por estado, cidade e categoria.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://postgrupoaquizap.com.br/buscar?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('pgz.theme')
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
+          document.documentElement.classList.toggle('dark', theme === 'dark')
+          document.documentElement.style.colorScheme = theme
+        } catch (e) {
+          /* storage bloqueado: segue o padrao escuro */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      Você precisa habilitar o JavaScript para usar o PostGrupo Aqui Zap.
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

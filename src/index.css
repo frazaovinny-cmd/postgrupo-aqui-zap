@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --pgz-bg: 22 19 19;
+    --pgz-surface: 30 26 26;
+    --pgz-border: 49 42 42;
+    --pgz-text: 235 240 232;
+    --pgz-muted: 154 163 150;
+    --pgz-neon: 83 229 21;
+  }
+
+  html.light {
+    --pgz-bg: 245 247 243;
+    --pgz-surface: 255 255 255;
+    --pgz-border: 220 226 214;
+    --pgz-text: 22 26 18;
+    --pgz-muted: 82 94 78;
+    --pgz-neon: 59 183 12;
+  }
+
+  * {
+    @apply border-base-600;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-base font-sans antialiased;
+    background-color: rgb(var(--pgz-bg));
+    color: rgb(var(--pgz-text));
+    min-height: 100dvh;
+  }
+
+  html.light body {
+    @apply bg-neutral-50 text-neutral-900;
+  }
+
+  /* Tipografia principal em verde neon conforme briefing */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-tight;
+  }
+
+  ::selection {
+    background-color: rgba(83, 229, 21, 0.28);
+    color: inherit;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-neon ring-offset-2 ring-offset-base;
+  }
+
+  html.light :focus-visible {
+    @apply ring-offset-neutral-50;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(83, 229, 21, 0.22);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(83, 229, 21, 0.4);
+    background-clip: content-box;
+  }
+}
+
+@layer components {
+  .pgz-surface {
+    background-color: rgb(var(--pgz-surface));
+    border-color: rgb(var(--pgz-border));
+  }
+
+  .pgz-text-neon {
+    color: rgb(var(--pgz-neon));
+  }
+
+  /* Link underline animado estilo Instagram */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 2px;
+  }
+
+  .glass {
+    background: rgba(21, 34, 55, 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  html.light .glass {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .neon-ring {
+    box-shadow: 0 0 0 1px rgba(83, 229, 21, 0.4), 0 8px 30px -10px rgba(83, 229, 21, 0.5);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-base-700;
+  }
+  html.light .skeleton {
+    @apply bg-neutral-200;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 animate-shimmer;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(83, 229, 21, 0.08) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon via-neon-soft to-neon bg-clip-text text-transparent;
+  }
+
+  .hide-scrollbar-x {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar-x::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
